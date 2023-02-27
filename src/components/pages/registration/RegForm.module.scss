@@ -1,0 +1,86 @@
+// НЕ ИСПОЛЬЗУЕТСЯ. МОЖНО УДАЛЯТЬ.
+
+
+$textColor: #fff;
+$fz: 20px;
+$tt: uppercase;
+
+.regform {
+	display: flex;
+		flex-direction: column;
+	margin-top: 3%;
+	padding: 20px;
+	width: 20%;
+	background-color: rgba(36, 36, 52, 0.5);
+
+	&__buttons {
+		display: flex;
+			flex-direction: column;
+	}
+
+	&__btn {
+		width: 100%;
+		padding: 12px 17px;
+		margin: 10px 0;
+		font-size: $fz;
+		text-transform: $tt;
+		text-align: center;
+		background:#1182ec;
+		box-shadow: 7px 6px 15px 1px rgba(89, 126, 249, 0.5);
+		border-radius: 5px;
+		color: $textColor;
+		position: relative;
+		transition-duration: 0.3s;
+  	-webkit-transition-duration: 0.4s; 
+		
+		&:disabled,
+		&[disabled] {
+			opacity: 0.6;
+			color:rgba(187, 198, 233, 0.5);
+			cursor: none;
+		}
+
+		&:enabled:hover {
+			transition-duration: 0.3s;
+			background: darken(#1182ec,12%);
+		}
+
+		&:after {
+			content: "";
+			width: 100%;
+			height: 100%;
+			display: block;
+			position: absolute;
+				left: 0;
+				top:0;
+			opacity: 0;
+			border-radius: 5px;
+			box-shadow: 0 0 10px 40px $textColor;
+			transition: all 0.5s;
+		}
+
+		&:enabled:active:after {
+			position: absolute;
+				left: 0;
+				top:0;
+			opacity: 1;
+			box-shadow: 0 0 0 0 $textColor;
+			border-radius: 5px;
+			transition: 0s;
+		}
+
+		&:active {
+			top: 1px;
+		}
+
+		&:first-child {
+			padding: 3px 17px;
+		}
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+}
+
+
